@@ -62,3 +62,24 @@ pointer to
 function returning
 pointer to
 integer
+
+----------------------------------------------------------------------------
+
+#include <iostream>
+
+
+int main()
+{
+	char msg[6]{ "hello" };
+
+	char* pMsg = msg;
+	
+	//아래 두 줄은 동일한 내용이다
+	std::cout << msg << std::endl;
+	std::cout << pMsg << std::endl;
+
+	// r-value는 주소가 없으므로 틀린 문법
+	char* p{ "hello" };
+	// 이렇게 바꿔야 맞는다
+	const char* p{ "hello" };
+}
